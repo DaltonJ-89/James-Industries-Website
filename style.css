@@ -1,7 +1,5 @@
-/* Import a clean modern font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fira+Code&display=swap');
 
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -10,77 +8,125 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #f5f7fa;
-  color: #333;
+  background-color: #0a0a0a;
+  color: #e0e0e0;
   line-height: 1.6;
   font-size: 16px;
-  padding-bottom: 60px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated RGB Background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(45deg, #ff0080, #00ffe1, #8aff00, #ff0080);
+  background-size: 400% 400%;
+  z-index: -1;
+  animation: backgroundFade 20s linear infinite;
+  opacity: 0.06;
+}
+
+@keyframes backgroundFade {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Header */
 header {
-  background-color: #1f2937;
+  background: linear-gradient(135deg, #000, #111);
   color: #fff;
   padding: 30px 20px;
   text-align: center;
+  border-bottom: 2px solid #222;
+  box-shadow: 0 0 20px rgba(0,255,255,0.15);
 }
 
 .logo {
   max-width: 130px;
   margin-bottom: 15px;
+  border-radius: 12px;
+  animation: rgbGlowCycle 6s ease-in-out infinite;
+  box-shadow: 0 0 12px #00ffe1;
+}
+
+@keyframes rgbGlowCycle {
+  0%   { box-shadow: 0 0 12px #ff0080; }
+  25%  { box-shadow: 0 0 12px #00ffe1; }
+  50%  { box-shadow: 0 0 12px #8aff00; }
+  75%  { box-shadow: 0 0 12px #ffae00; }
+  100% { box-shadow: 0 0 12px #ff0080; }
 }
 
 /* Navigation */
 nav {
-  background-color: #374151;
-  padding: 12px;
+  background-color: #111;
   text-align: center;
+  padding: 15px;
+  border-bottom: 1px solid #222;
 }
 
 nav a {
-  color: #fff;
+  color: #00ffe1;
   margin: 0 14px;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.2s ease;
+  transition: 0.2s;
 }
 
 nav a:hover {
-  color: #60a5fa;
+  color: #ff0080;
+  text-shadow: 0 0 8px #ff0080;
 }
 
-/* Main Content Area */
+/* Main Content */
 main {
   max-width: 960px;
   margin: 40px auto;
   padding: 0 20px;
 }
 
-/* Section Styling */
+/* Section Glow Borders */
 section {
-  background-color: #fff;
+  background-color: #121212;
   padding: 30px;
   margin-bottom: 30px;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.08);
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: inherit;
+  background: linear-gradient(45deg, #ff0080, #00ffe1, #8aff00, #ff0080);
+  background-size: 600% 600%;
+  z-index: -1;
+  animation: borderRGB 12s ease infinite;
+  opacity: 0.3;
+}
+
+@keyframes borderRGB {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Headings */
 h1, h2, h3 {
+  font-family: 'Fira Code', monospace;
+  color: #ffffff;
   margin-bottom: 20px;
-  font-weight: 600;
-}
-
-h1 {
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 1.5rem;
-}
-
-h3 {
-  font-size: 1.2rem;
 }
 
 /* Paragraphs & Lists */
@@ -101,24 +147,35 @@ li {
 a.cta-button, .submit-btn {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #0066cc;
-  color: white;
+  background: linear-gradient(90deg, #00ffe1, #ff0080, #8aff00);
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
+  border: none;
   border-radius: 6px;
   margin-top: 10px;
-  transition: background-color 0.3s ease;
+  background-size: 600% 100%;
+  animation: glowPulse 6s ease-in-out infinite;
 }
 
 a.cta-button:hover, .submit-btn:hover {
-  background-color: #004999;
+  background-position: 100% 0;
+  text-shadow: 0 0 10px #fff;
+  transform: scale(1.05);
 }
 
-/* Forms */
+@keyframes glowPulse {
+  0% { background-position: 0% 0; }
+  50% { background-position: 100% 0; }
+  100% { background-position: 0% 0; }
+}
+
+/* Form Inputs */
 form label {
   display: block;
   margin-top: 1rem;
   font-weight: 600;
+  color: #00ffe1;
 }
 
 form input, form textarea {
@@ -126,7 +183,9 @@ form input, form textarea {
   padding: 10px;
   margin-top: 6px;
   margin-bottom: 16px;
-  border: 1px solid #ccc;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  color: #fff;
   border-radius: 6px;
 }
 
@@ -134,67 +193,42 @@ form textarea {
   resize: vertical;
 }
 
-.submit-btn {
-  background-color: #2ecc71;
-  border: none;
-  cursor: pointer;
-}
-
-/* Contact Info */
-.contact-info a {
-  color: #0066cc;
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-/* Blockquote Styling */
+/* Quotes */
 blockquote {
-  background-color: #f0f8ff;
-  border-left: 4px solid #0066cc;
+  border-left: 4px solid #00ffe1;
+  background-color: #181818;
   padding: 15px 20px;
   font-style: italic;
-  color: #333;
   margin: 20px 0;
+  color: #ccc;
 }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #1f2937;
-  color: #bbb;
+  background-color: #0a0a0a;
+  color: #666;
   font-size: 0.9em;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+  border-top: 1px solid #222;
+  box-shadow: 0 0 12px rgba(255, 0, 128, 0.1);
 }
 
-/* Image Styling */
+/* Images */
 .responsive-img, .img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
   display: block;
   margin: 20px auto;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00ffe1;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
   nav a {
     display: block;
-    margin: 8px 0;
-  }
-
-  body {
-    font-size: 15px;
-  }
-
-  header h1 {
-    font-size: 1.5rem;
+    margin: 10px 0;
   }
 
   main {
