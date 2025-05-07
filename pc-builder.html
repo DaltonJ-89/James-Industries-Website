@@ -1,69 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Build Your Custom PC | James Industries</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    main {
-      padding: 2rem;
-      font-family: Arial, sans-serif;
-      background-color: #f8f8f8;
-    }
-    .builder-section {
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      max-width: 900px;
-      margin: auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .builder-section h2 {
-      margin-bottom: 1rem;
-    }
-    .cta-button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      background-color: #3498db;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    .cta-button:hover {
-      background-color: #2980b9;
-    }
-    ul.instructions {
-      margin-top: 1.5rem;
-      line-height: 1.6;
-    }
-    form {
-      margin-top: 2rem;
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    form label {
-      font-weight: bold;
-    }
-    .submit-btn {
-      background-color: #2ecc71;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .submit-btn:hover {
-      background-color: #27ae60;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -77,13 +19,13 @@
     <a href="about.html">About</a>
     <a href="guarantee.html">Guarantee</a>
     <a href="contact.html">Contact</a>
-    <a href="terms.html">Terms & Policies</a> 
+    <a href="terms.html">Terms & Policies</a>
   </nav>
 
   <main>
-    <div class="builder-section">
+    <section class="builder-section">
       <h2>Customize Your PC</h2>
-      <p>Use our trusted tool powered by PCPartPicker to design your dream machine. Then, send us your build link and we’ll give you a quote or schedule a consultation.</p>
+      <p>Use our trusted tool powered by PCPartPicker to design your dream machine. Then, send us your build link and we’ll provide a quote or schedule a consultation.</p>
 
       <a href="https://pcpartpicker.com/list/" target="_blank" class="cta-button">Launch PC Builder</a>
 
@@ -91,28 +33,32 @@
       <ul class="instructions">
         <li>Click the button above to open PCPartPicker.</li>
         <li>Select your preferred parts (CPU, GPU, RAM, etc.).</li>
-        <li>Click “Save As” to save your build MAKE SURE TO UNCHECK THE PRIVATE BOX.</li>
-        <li>Right-click on your saved build list and copy the link to your saved build. NOT SHARE</li>
-        <li>Return here and submit it using the form below.</li>
+        <li>Click “Save As” and uncheck the private box.</li>
+        <li>Right-click the saved build and copy the link (not the share button).</li>
+        <li>Return here and submit the form below.</li>
       </ul>
 
       <h3>Submit Your Build</h3>
       <form action="mailto:sales@james-industries-llc.com" method="POST" enctype="text/plain">
         <label for="name">Your Name:</label>
-        <input type="text" id="name" name="Name" required>
+        <input type="text" id="name" name="Name" required />
 
         <label for="email">Your Email:</label>
-        <input type="email" id="email" name="Email" required>
+        <input type="email" id="email" name="Email" required />
 
         <label for="build">PCPartPicker Share Link:</label>
-        <input type="url" id="build" name="Build Link" required>
+        <input type="url" id="build" name="Build Link" required />
 
         <label for="notes">Any Notes or Requests:</label>
         <textarea id="notes" name="Notes" rows="4"></textarea>
 
-        <input type="submit" value="Submit Build" class="submit-btn">
+        <input type="submit" value="Submit Build" class="submit-btn" />
       </form>
-    </div>
+    </section>
   </main>
+
+  <footer>
+    <p>&copy; 2025 James Industries. All rights reserved.</p>
+  </footer>
 </body>
 </html>
