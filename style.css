@@ -299,6 +299,7 @@ footer {
     max-height: 60vh;
   }
   .close {
+    <a href="#" class="close">&times;</a>
     top: 10px;
     right: 20px;
     font-size: 1.5rem;
