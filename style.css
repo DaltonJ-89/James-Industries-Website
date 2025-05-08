@@ -237,7 +237,7 @@ footer {
 }
 .rgb-divider {
   border: 0;
-  height: 2px;
+  height: 4px;
   background: linear-gradient(90deg, #ff0080, #00ffe1, #8aff00);
   animation glow-pulse 8s linear infinate;
 }
