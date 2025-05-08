@@ -25,6 +25,20 @@
   </nav>
 
   <main>
+    <h2 id="intro-text"></h2>
+<script>
+  const text = "Welcome to James Industries.";
+  let i = 0;
+  const speed = 70;
+  function typeWriter() {
+    if (i < text.length) {
+      document.getElementById("intro-text").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+  window.onload = typeWriter;
+</script>
     <section class="announcement">
       <h2>We are currently in startup mode and offering limited services.</h2>
       <p>Check the Services tab above for details and estimated pricing.</p>
