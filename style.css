@@ -303,3 +303,13 @@ nav {
     visibility: hidden;
   }
 }
+.gallery-img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00ffe1;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  margin: auto;
+}
