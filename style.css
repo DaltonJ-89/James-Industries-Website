@@ -237,9 +237,10 @@ footer {
 }
 .rgb-divider {
   border: 0;
-  height: 4px;
+  height: 2px;
   background: linear-gradient(90deg, #ff0080, #00ffe1, #8aff00);
-  animation glow-pulse 8s linear infinate;
+  animation: glow-pulse 8s linear infinite;
+  margin-bottom: 30px; /* This adds spacing under it */
 }
 .card {
   background: #1a1a1a;
