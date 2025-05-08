@@ -6,6 +6,19 @@
   <title>Projects Gallery | James Industries</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+  <script>
+  document.querySelectorAll('.gallery-grid a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('nav').style.display = 'none';
+    });
+  });
+
+  document.querySelectorAll('.lightbox .close').forEach(closeBtn => {
+    closeBtn.addEventListener('click', () => {
+      document.querySelector('nav').style.display = 'block';
+    });
+  });
+</script>
 <body>
   <header>
     <img src="logo-png.png" alt="James Industries Logo" class="logo" />
