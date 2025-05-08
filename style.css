@@ -241,3 +241,15 @@ footer {
   background: linear-gradient(90deg, #ff0080, #00ffe1, #8aff00);
   animation glow-pulse 8s linear infinate;
 }
+.card {
+  background: #1a1a1a;
+  border: 1px solid #2d2d2d;
+  border-radius: 12px;
+  padding: 20px;
+  transition: 0.3 ease;
+  box-shadow: 0 0 10px rgba(0,255,255,0.3);
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0,255,255,0.3);
+}
