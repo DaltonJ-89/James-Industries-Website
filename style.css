@@ -47,7 +47,7 @@ header {
 }
 
 .logo {
-  max-width: 130px;
+  max-width: 300px;
   margin-bottom: 15px;
   border-radius: 12px;
   animation: rgbGlowCycle 6s ease-in-out infinite;
