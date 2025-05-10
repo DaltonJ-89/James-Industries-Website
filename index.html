@@ -36,6 +36,16 @@
     <a href="projects-gallery.html">Projects Gallery</a>
     <a href="terms.html">Terms & Policies</a>
   </nav>
+<header class="mobile-header">
+  <div class="logo">James Industries</div>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <nav id="mobileMenu" class="mobile-nav hidden">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
   <main>
     <section class="announcement">
@@ -79,5 +89,12 @@
 
     <p>&copy; 2025 James Industries. All rights reserved.</p>
   </footer>
+  <script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('hidden');
+  }
+</script>
+
 </body>
 </html>
