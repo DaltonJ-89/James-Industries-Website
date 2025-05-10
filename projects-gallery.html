@@ -6,25 +6,12 @@
   <title>Projects Gallery | James Industries</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-  <script>
-  document.querySelectorAll('.gallery-grid a').forEach(link => {
-    link.addEventListener('click', () => {
-      document.querySelector('nav').style.display = 'none';
-    });
-  });
-
-  document.querySelectorAll('.lightbox .close').forEach(closeBtn => {
-    closeBtn.addEventListener('click', () => {
-      document.querySelector('nav').style.display = 'block';
-    });
-  });
-</script>
 <body>
   <header>
-   <img src="logo-png.png" alt="James Industries Logo" class="logo" />
-    
+    <img src="logo-png.png" alt="James Industries Logo" class="logo" />
     <h1>Past Projects</h1>
   </header>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
@@ -34,18 +21,16 @@
     <a href="contact.html">Contact</a>
     <a href="terms.html">Terms & Policies</a>
   </nav>
-<main>
+
+  <main>
     <section class="project-gallery">
       <h2>Some of Our Projects</h2>
       <hr class="rgb-divider">
       <div class="gallery-grid">
-        <a href="#img1"><img src="personal-build.jpeg" alt="Personal Gaming PC Build" class="gallery-img"></a>
-        <a href="#img2"><img src="novabench.png" alt="NovaBench Benchmark" class="gallery-img"></a>
-        <div id="img1" class="lightbox">
-  <a href="#" class="close">&times;</a>
-          <hr class="rgb-divider">
-</div>
-        
+        <img src="personal-build.jpeg" alt="Personal Gaming PC Build" class="gallery-img">
+        <img src="novabench.png" alt="NovaBench Benchmark" class="gallery-img">
+        <!-- Add more images here -->
+      </div>
     </section>
   </main>
 
