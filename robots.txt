@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://james-industries-llc.com/sitemap.xml
