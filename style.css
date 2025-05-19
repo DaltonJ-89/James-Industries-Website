@@ -190,6 +190,9 @@ footer a:hover {
 @media (max-width: 768px) {
   header {
     padding: 1rem;
+    flex-direction: column;
+    align-itmes: center;
+    text-align: center;
   }
 
   nav {
@@ -207,6 +210,15 @@ footer a:hover {
 
   .gallery-grid {
     grid-template-columns: 1fr;
+  }
+
+  .gallery-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .site-logo {
+    height: 50px;
   }
 }
 
