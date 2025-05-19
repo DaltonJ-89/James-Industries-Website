@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="Z49z5b0RejITewHsY4WZnMREC1YYhBVvJyPiqCLXh64" />
+  <title>James Industries | IT Services</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1159473769377411" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <img src="img/logo.png" alt="James Industries Logo" class="site-logo" />
+    <h2 id="intro-text"></h2>
+    <script>
+      const text = "Welcome to James Industries";
+      let i = 0;
+      const speed = 70;
+      function typeWriter() {
+        if (i < text.length) {
+          document.getElementById("intro-text").innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      }
+      typeWriter();
+    </script>
+  </header>
+
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="services.html">Services</a>
+    <a href="pc-builder.html">PC Builder</a>
+    <a href="about.html">About</a>
+    <a href="guarantee.html">Guarantee</a>
+    <a href="contact.html">Contact</a>
+    <a href="projects-gallery.html">Projects Gallery</a>
+    <a href="terms.html">Terms & Policies</a>
+  </nav>
+
+  <main>
+    <section class="announcement">
+      <div class="container">
+        <h2>We are currently in startup mode and offering limited services.</h2>
+        <hr class="rgb-divider">
+        <p>Check the Services tab above for details and estimated pricing.</p>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="container">
+        <h2>Our Work</h2>
+        <hr class="rgb-divider">
+        <div class="gallery-grid">
+          <div class="card">
+            <img src="images/projects1.jpg" alt="Custom PC Build" class="gallery-img" />
+            <h3>Custom Gaming Rigs</h3>
+          </div>
+          <div class="card">
+            <img src="images/project2.jpg" alt="Website Design" class="gallery-img" />
+            <h3>Website Designs</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="image-block">
+      <div class="container">
+        <img src="img/sick-computer.png" alt="Sick Computer" class="responsive-img" />
+      </div>
+    </section>
+
+    <section class="credit">
+      <div class="container">
+        <p>Website designed by James Industries</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><a href="mailto:contact@james-industries-llc.com">Email Us</a></p>
+    <p><a href="tel:17652016755">Call: (765) 201-6755</a></p>
+    <p>&copy; 2025 James Industries. All rights reserved.</p>
+  </footer>
+</body>
+</html>
