@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>James Industries Merch Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      margin: 0;
+      padding: 2rem;
+    }
+    .product {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .product h2 {
+      margin-top: 1rem;
+    }
+    .product p {
+      font-size: 1.2rem;
+    }
+    .product select {
+      margin: 10px 0;
+      padding: 0.5rem;
+      width: 100%;
+      background: #222;
+      color: #fff;
+      border: 1px solid #555;
+    }
+    .product button {
+      background-color: #00bcd4;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .product button:hover {
+      background-color: #0097a7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="product">
+    <img src="gpu-shirt-mockup.jpg" alt="Men’s premium heavyweight tee (GPU)">
+    <h2>Men’s Premium Heavyweight Tee (GPU)</h2>
+    <p>$32.00</p>
+
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+      <!-- Replace this with your actual PayPal email once ready -->
+      <input type="hidden" name="business" value="your-paypal@example.com">
+      <input type="hidden" name="cmd" value="_xclick">
+      <input type="hidden" name="item_name" value="James Industries GPU Shirt">
+      <input type="hidden" name="amount" value="32.00">
+      <input type="hidden" name="currency_code" value="USD">
+
+      <label for="size">Size:</label>
+      <select name="on0" id="size">
+        <option value="Small">S</option>
+        <option value="Medium">M</option>
+        <option value="Large">L</option>
+        <option value="XL">XL</option>
+        <option value="2XL">2XL</option>
+        <option value="3XL">3XL</option>
+      </select>
+
+      <br><br>
+      <button type="submit">Buy Now</button>
+    </form>
+  </div>
+
+</body>
+</html>
