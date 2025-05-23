@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>James Industries Merch Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .product {
+      background: linear-gradient(145deg, #0c0c0c, #121212);
+      border: 1px solid #1e1e1e;
+      border-radius: 15px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 0 15px rgba(0, 191, 255, 0.2);
+      padding: 2rem;
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 1.2rem;
+    }
+    .product h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .product p {
+      font-size: 1.2rem;
+      color: #00c8ff;
+      margin-bottom: 1.5rem;
+    }
+    .product select {
+      margin-bottom: 1.2rem;
+      padding: 0.6rem;
+      width: 100%;
+      background: #1a1a1a;
+      color: #ffffff;
+      border: 1px solid #333;
+      border-radius: 6px;
+    }
+    .product button {
+      background: #00c8ff;
+      border: none;
+      padding: 12px 24px;
+      color: #000;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .product button:hover {
+      background: #00aacc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="product">
+    <img src="gpu-shirt-mockup.jpg" alt="Men’s premium heavyweight tee (GPU)">
+    <h2>Men’s Premium Heavyweight Tee (GPU)</h2>
+    <p>$32.00</p>
+
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+      <!-- Replace this with your actual PayPal email once ready -->
+      <input type="hidden" name="business" value="your-paypal@example.com">
+      <input type="hidden" name="cmd" value="_xclick">
+      <input type="hidden" name="item_name" value="James Industries GPU Shirt">
+      <input type="hidden" name="amount" value="32.00">
+      <input type="hidden" name="currency_code" value="USD">
+
+      <label for="size">Size:</label>
+      <select name="on0" id="size">
+        <option value="Small">S</option>
+        <option value="Medium">M</option>
+        <option value="Large">L</option>
+        <option value="XL">XL</option>
+        <option value="2XL">2XL</option>
+        <option value="3XL">3XL</option>
+      </select>
+
+      <button type="submit">Buy Now</button>
+    </form>
+  </div>
+
+</body>
+</html>
