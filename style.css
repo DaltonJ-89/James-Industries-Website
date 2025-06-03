@@ -315,4 +315,42 @@ a:hover {
     width: 100%;
   }
 }
+/* Dropdown Animation */
+.dropdown-menu {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #1a1a1a;
+  margin-top: 1rem;
+  padding: 0 1rem;
+  border-radius: 8px;
+}
+
+.dropdown-nav.open .dropdown-menu {
+  max-height: 500px; /* enough to show all links */
+  opacity: 1;
+  padding: 1rem;
+}
+
+/* Toggle Icon */
+.dropdown-toggle {
+  background-color: #b52020;
+  color: #d4a01f;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.dropdown-toggle.open::after {
+  content: " ✖";
+}
+
 
