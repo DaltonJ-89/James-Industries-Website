@@ -73,10 +73,22 @@
     <p><a href="tel:17652016755">Call: (765) 201-6755</a></p>
     <p>&copy; 2025 James Industries. All rights reserved.</p>
   </footer>
-   <script>
-    const nav = document.querySelector('.dropdown-nav');
-    const toggle = nav,querySelector('.dropdown-toggle');
+ <script>
+  const nav = document.querySelector('.dropdown-nav');
+  const toggle = nav.querySelector('.dropdown-toggle');
+  const links = nav.querySelectorAll('.dropdown-menu a');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+
+  // Auto-close the menu when a link is clicked
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
