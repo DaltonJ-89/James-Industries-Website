@@ -78,15 +78,26 @@
   const toggle = nav.querySelector('.dropdown-toggle');
   const links = nav.querySelectorAll('.dropdown-menu a');
 
+  // Toggle menu and icon
   toggle.addEventListener('click', () => {
     nav.classList.toggle('open');
+    toggle.classList.toggle('open');
   });
 
-  // Auto-close the menu when a link is clicked
+  // Auto-close on link click
   links.forEach(link => {
     link.addEventListener('click', () => {
       nav.classList.remove('open');
+      toggle.classList.remove('open');
     });
+  });
+
+  // Auto-close on outside click
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target)) {
+      nav.classList.remove('open');
+      toggle.classList.remove('open');
+    }
   });
 </script>
 
