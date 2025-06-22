@@ -65,7 +65,7 @@ header h2 {
   transition: all 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
   background-color: #1a1a1a;
   margin-top: 1rem;
   padding: 0 1rem;
@@ -73,7 +73,7 @@ header h2 {
 }
 
 .dropdown-nav.open .dropdown-menu {
-  max-height: 500px;
+  max-height: 1250px;
   opacity: 1;
   padding: 1rem;
 }
