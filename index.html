@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>James Industries — Landscaping, Tree Trimming & More (Delphi, IN)</title>
+  <meta name="description" content="Veteran-led landscaping and tree trimming serving Delphi, Indiana and nearby counties. Transparent pricing, fast quotes, mission-ready work." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="brand">James Industries</div>
+    <nav>
+      <ul class="nav">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Landscaping, Tree Trimming &amp; More</h1>
+      <p>Serving Delphi, IN and surrounding counties.</p>
+    </section>
+    <section id="services">
+      <h2>Services</h2>
+      <ul>
+        <li>Landscaping</li>
+        <li>Tree Trimming</li>
+        <li>Lawn Mowing</li>
+        <li>Brush Clearing</li>
+        <li>Seasonal Cleanup</li>
+      </ul>
+    </section>
+    <section id="pricing">
+      <h2>Pricing</h2>
+      <p>Landscaping — $75/hr</p>
+      <p>Tree Trimming — $100/hr</p>
+      <p>Lawn Mowing — $50/hr</p>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form id="quoteForm">
+        <label>Name: <input type="text" name="name" required></label><br>
+        <label>Phone: <input type="tel" name="phone" required></label><br>
+        <label>Service: 
+          <select name="service" required>
+            <option value="">Select…</option>
+            <option>Landscaping</option>
+            <option>Tree Trimming</option>
+            <option>Lawn Mowing</option>
+          </select>
+        </label><br>
+        <button type="submit">Request Quote</button>
+        <p id="formStatus"></p>
+      </form>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>© <span id="year"></span> James Industries</p>
+  </footer>
+</body>
+</html>
