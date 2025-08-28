@@ -10,3 +10,12 @@ body{
 section{padding:2rem}
 .footer{text-align:center;padding:1rem;background:#0f5233;color:white;margin-top:2rem}
 form label{display:block;margin:.5rem 0}
+.logo {
+  height: 50px; /* adjust as needed */
+  width: auto; /* keeps aspect ratio */
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap 10px; /* space between logo and text */
+}
