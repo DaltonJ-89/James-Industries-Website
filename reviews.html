@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>James Industries | Reviews</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="Z49z5b0RejITewHsY4WZnMREC1YYhBVvJyPiqCLXh64" />
+  <meta name="description" content="James Industries provides custom PC builds, tech support, and IT services in Indiana. Veteran-owned and committed to honest, reliable service.">
+  <meta property="og:title" content="James Industries | IT Services">
+  <meta property="og:description" content="Veteran-owned IT support, PC builds, malware removal, and tech consulting. Serving Indiana with integrity.">
+  <meta property="og:image" content="logo.png">
+  <meta property="og:type" content="website">
+  <title>James Industries | IT Services</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1159473769377411" crossorigin="anonymous"></script>
 </head>
-
 <body>
+    <header>
+    <img src="logo.png" alt="James Industries Logo" class="site-logo" />
+    <h1 id="intro-text"></h1>
+    <script>
+      const text = "Welcome to James Industries";
+      let i = 0;
+      const speed = 70;
+      function typeWriter() {
+        if (i < text.length) {
+          document.getElementById("intro-text").innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      }
+      typeWriter();
+    </script>
+  </header>
 
     <!-- Global Navigation -->
     <nav class="dropdown-nav">
@@ -33,10 +50,6 @@
             <a href="terms.html">Terms & Policies</a>
         </div>
     </nav>
-
-    <header class="topbar">
-        <div class="logo">James Industries</div>
-    </header>
 
     <section class="hero small-hero">
         <h1>Tech Reviews</h1>
