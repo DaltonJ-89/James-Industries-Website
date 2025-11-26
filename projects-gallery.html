@@ -8,13 +8,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1159473769377411" crossorigin="anonymous"></script>
 </head>
+
 <body>
   <header>
     <img src="logo.png" alt="James Industries Logo" class="site-logo" />
     <h1>Past Projects</h1>
   </header>
 
-<nav class="dropdown-nav">
+  <nav class="dropdown-nav">
     <button class="dropdown-toggle" aria-label="Open Menu">☰ Menu</button>
     <div class="dropdown-menu">
       <a href="index.html">Home</a>
@@ -28,52 +29,78 @@
       <a href="projects-gallery.html" class="active">Projects Gallery</a>
       <a href="https://JamesIndustriesStore.etsy.com" target="_blank">James Industries Store</a>
       <a href="terms.html">Terms & Policies</a>
-    </div>  
+    </div>
   </nav>
-  
+
   <main>
     <section class="project-gallery container">
-      <h2>Some of Our Projects</h2>
+
+      <h2>Some of Our Work</h2>
       <hr class="rgb-divider">
+
+      <p class="gallery-intro">
+        Here are a few examples of computers, upgrades, diagnostics, and benchmarks completed by 
+        <strong>James Industries</strong>. More projects will be added as we continue helping customers build 
+        better, faster, and cleaner systems.
+      </p>
+
       <div class="gallery-grid">
-        <img src="personal-build.jpeg" alt="Personal Gaming PC Build" class="gallery-img" />
-        <img src="novabench.png" alt="NovaBench Benchmark" class="gallery-img" />
-        <!-- Add more images here as needed -->
+
+        <!-- Project 1 -->
+        <div class="gallery-item">
+          <img src="personal-build.jpeg" 
+               alt="Completed custom gaming PC with RGB lighting and cable-managed interior" 
+               class="gallery-img" />
+          <p class="gallery-caption">Fully custom gaming PC build with clean cable routing and RGB integration.</p>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="gallery-item">
+          <img src="novabench.png" 
+               alt="NovaBench benchmark score showing system performance" 
+               class="gallery-img" />
+          <p class="gallery-caption">System benchmark & performance tuning using NovaBench.</p>
+        </div>
+
+        <!-- Add more gallery-item blocks as you complete more projects -->
       </div>
+
+      <p class="gallery-outro">
+        Want your own custom PC or a system upgrade?  
+        <a href="contact.html">Contact us today.</a>
+      </p>
+
     </section>
   </main>
 
   <footer>
     <p>&copy; 2025 James Industries. All rights reserved.</p>
   </footer>
-   <script>
-  const nav = document.querySelector('.dropdown-nav');
-  const toggle = nav.querySelector('.dropdown-toggle');
-  const links = nav.querySelectorAll('.dropdown-menu a');
 
-  // Toggle menu and icon
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
-    toggle.classList.toggle('open');
-  });
+  <script>
+    const nav = document.querySelector('.dropdown-nav');
+    const toggle = nav.querySelector('.dropdown-toggle');
+    const links = nav.querySelectorAll('.dropdown-menu a');
 
-  // Auto-close on link click
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      toggle.classList.remove('open');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      toggle.classList.toggle('open');
     });
-  });
 
-  // Auto-close on outside click
-  document.addEventListener('click', (e) => {
-    if (!nav.contains(e.target)) {
-      nav.classList.remove('open');
-      toggle.classList.remove('open');
-    }
-  });
-</script>
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target)) {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+      }
+    });
+  </script>
 
 </body>
 </html>
-
