@@ -8,10 +8,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1159473769377411" crossorigin="anonymous"></script>
 </head>
+
 <body>
   <header>
     <img src="logo.png" alt="James Industries Logo" class="site-logo" />
-    <h1>Our Services</h1>
+    <h1>Professional IT Services</h1>
   </header>
 
   <nav class="dropdown-nav">
@@ -28,26 +29,47 @@
       <a href="projects-gallery.html">Projects Gallery</a>
       <a href="https://JamesIndustriesStore.etsy.com" target="_blank">James Industries Store</a>
       <a href="terms.html">Terms & Policies</a>
-    </div>  
+    </div>
   </nav>
-  
+
   <main>
     <section class="services-list">
       <div class="container">
+
         <h2>What We Offer</h2>
         <hr class="rgb-divider">
-        <ul>
-          <li><strong>PC Cleanup & Optimization/Upgrades:</strong> Starting at $50</li>
+
+        <p class="service-area">
+          <strong>Service Area:</strong> Serving Indiana and surrounding regions.
+        </p>
+
+        <ul class="services-ul">
+          <li><strong>PC Cleanup & Optimization / Upgrades:</strong> Starting at $50</li>
           <li><strong>Virus & Malware Removal:</strong> Starting at $75</li>
           <li><strong>Home Network Setup:</strong> Starting at $100</li>
           <li><strong>Custom PC Builds:</strong> Contact us for a quote</li>
           <li><strong>Tech Consultations:</strong> $30 per hour</li>
           <li><strong>Web Development:</strong> Contact us for a quote</li>
         </ul>
-        <p class="note">*Prices may vary based on system condition, service complexity, or parts required.</p>
-        <h2>Schedule a Service</h2>
+
+        <p class="note">*Final pricing may vary based on system condition, service complexity, or required parts.</p>
+
+        <h2>Ready to Schedule?</h2>
         <hr class="rgb-divider">
-        <p>Email us at: <a href="mailto:sales@james-industries-llc.com">sales@james-industries-llc.com</a></p>
+
+        <p>Email us at:  
+          <a href="mailto:sales@james-industries-llc.com">sales@james-industries-llc.com</a>
+        </p>
+
+        <p>Or call:  
+          <a href="tel:17654143506">(765) 414-3506</a>
+        </p>
+
+        <div class="cta-row">
+          <a href="contact.html" class="btn primary-btn">Request Service</a>
+          <a href="pc-builder.html" class="btn secondary-btn">PC Builder</a>
+        </div>
+
       </div>
     </section>
   </main>
@@ -55,33 +77,31 @@
   <footer>
     <p>&copy; 2025 James Industries. All rights reserved.</p>
   </footer>
-   <script>
-  const nav = document.querySelector('.dropdown-nav');
-  const toggle = nav.querySelector('.dropdown-toggle');
-  const links = nav.querySelectorAll('.dropdown-menu a');
 
-  // Toggle menu and icon
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
-    toggle.classList.toggle('open');
-  });
+  <script>
+    const nav = document.querySelector('.dropdown-nav');
+    const toggle = nav.querySelector('.dropdown-toggle');
+    const links = nav.querySelectorAll('.dropdown-menu a');
 
-  // Auto-close on link click
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      toggle.classList.remove('open');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      toggle.classList.toggle('open');
     });
-  });
 
-  // Auto-close on outside click
-  document.addEventListener('click', (e) => {
-    if (!nav.contains(e.target)) {
-      nav.classList.remove('open');
-      toggle.classList.remove('open');
-    }
-  });
-</script>
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target)) {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+      }
+    });
+  </script>
 
 </body>
 </html>
