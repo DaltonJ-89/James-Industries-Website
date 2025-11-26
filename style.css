@@ -1,61 +1,148 @@
-/* Reset & Base Styles */
+/* ================================
+   Reset & Base Styles
+================================ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  --bg-main: #05070a;
+  --bg-elevated: #0b1016;
+  --bg-elevated-soft: #0f171f;
+  --accent-primary: #00f7ff;
+  --accent-secondary: #ff3366;
+  --accent-gold: #f5c451;
+  --text-main: #f5f7fb;
+  --text-muted: #a4acb9;
+  --border-subtle: #1d2633;
+  --shadow-soft: 0 12px 35px rgba(0, 0, 0, 0.6);
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --transition-fast: 0.18s ease;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #000000d5;
-  color: #f3f1f1;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: radial-gradient(circle at top, #101926 0, #05070a 45%, #020306 100%);
+  color: var(--text-main);
   line-height: 1.6;
 }
 
-/* Logo */
+/* Global links */
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-secondary);
+  text-decoration: underline;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Headshot */
+.headshot {
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-primary);
+  box-shadow: 0 0 18px rgba(0, 247, 255, 0.4);
+}
+
+/* ================================
+   Logo & Header
+================================ */
 .site-logo,
 .logo {
   height: 60px;
+  filter: drop-shadow(0 0 10px rgba(0, 247, 255, 0.4));
 }
 
-/* Header */
 header {
-  background-color: #b52020;
-  padding: 1rem 2rem;
+  background: radial-gradient(circle at top, #1a2635, #05070a);
+  border-bottom: 1px solid rgba(0, 247, 255, 0.18);
+  padding: 1.25rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 10% 0, rgba(0, 247, 255, 0.12), transparent 55%);
+  pointer-events: none;
 }
 
 header h1,
 header h2 {
-  color: #d4a01f;
+  color: var(--accent-primary);
   margin-top: 0.5rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
-/* Dropdown Nav Menu */
+/* Slim topbar header (used on reviews page) */
+.topbar {
+  background-color: #05070a;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 247, 255, 0.18);
+}
+
+.topbar .logo {
+  height: 50px;
+}
+
+/* ================================
+   Dropdown Navigation
+================================ */
 .dropdown-nav {
-  background-color: #0e0e0e;
+  background: rgba(5, 7, 10, 0.95);
   text-align: center;
   padding: 1rem;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 247, 255, 0.15);
 }
 
 .dropdown-toggle {
-  background-color: #b52020;
-  color: #d4a01f;
-  border: none;
+  background: linear-gradient(135deg, #0b8cff, #00f7ff);
+  color: #020308;
+  border: 1px solid rgba(0, 247, 255, 0.4);
   padding: 0.7rem 1.5rem;
-  font-size: 1.1rem;
-  border-radius: 5px;
+  font-size: 1.05rem;
+  border-radius: 999px;
   cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
 }
 
 .dropdown-toggle.open::after {
   content: " ✖";
+}
+
+.dropdown-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 18px rgba(0, 247, 255, 0.5);
 }
 
 .dropdown-menu {
@@ -65,11 +152,13 @@ header h2 {
   transition: all 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  background-color: #1a1a1a;
+  gap: 0.5rem;
+  background: rgba(11, 16, 25, 0.96);
   margin-top: 1rem;
   padding: 0 1rem;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 247, 255, 0.2);
+  box-shadow: var(--shadow-soft);
 }
 
 .dropdown-nav.open .dropdown-menu {
@@ -79,28 +168,33 @@ header h2 {
 }
 
 .dropdown-menu a {
-  color: #f3f1f1;
-  font-weight: bold;
+  color: var(--text-main);
+  font-weight: 500;
   text-decoration: none;
-  padding: 0.6rem;
-  border-radius: 4px;
-  transition: background 0.3s;
+  padding: 0.6rem 0.85rem;
+  border-radius: 999px;
+  transition: background 0.25s, color 0.25s, transform 0.1s;
+  border: 1px solid transparent;
 }
 
 .dropdown-menu a:hover,
 .dropdown-menu a.active {
-  background-color: #d4a01f;
-  color: #000;
+  background: radial-gradient(circle at top, rgba(0, 247, 255, 0.2), rgba(0, 0, 0, 0.8));
+  color: var(--accent-primary);
+  border-color: rgba(0, 247, 255, 0.35);
+  transform: translateY(-1px);
 }
 
-/* Containers */
+/* ================================
+   Layout Containers
+================================ */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
 }
 
-/* Hero, Sections, Blocks */
+/* Section shells */
 .hero,
 .services-list,
 .about-section,
@@ -112,22 +206,49 @@ header h2 {
 .announcement,
 .gallery,
 .image-block,
-.credit {
+.credit,
+.reviews {
   padding: 3rem 2rem;
   background-color: transparent;
 }
 
+/* Card-like inner wrapper (optional for some sections) */
+.hero .container,
+.services-list .container,
+.about-section.container,
+.contact-section.container,
+.guarantee-block.container,
+.terms-section.container,
+.builder-section.container,
+.project-gallery.container,
+.reviews {
+  background: radial-gradient(circle at top left, rgba(0, 247, 255, 0.14), transparent 60%),
+              linear-gradient(145deg, rgba(11, 16, 25, 0.95), rgba(5, 7, 10, 0.98));
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 247, 255, 0.16);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Headings */
 .hero h1,
 section h2 {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   margin-bottom: 1rem;
-  color: #d4a01f;
+  color: var(--accent-primary);
+  text-shadow: 0 0 15px rgba(0, 247, 255, 0.45);
+}
+
+section h3 {
+  font-size: 1.3rem;
+  margin: 1.5rem 0 0.75rem;
+  color: var(--accent-gold);
 }
 
 section p,
 section ul,
 section li {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  color: var(--text-main);
 }
 
 section ul {
@@ -136,82 +257,233 @@ section ul {
 }
 
 section ul li {
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
 }
 
-/* Gallery Images */
+/* Smaller hero variant */
+.small-hero {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Notes, captions, subtle text */
+.note {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+}
+
+.service-area {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.gallery-caption,
+.video-caption {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* Specialized lists */
+.services-ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.services-ul li {
+  margin-bottom: 0.4rem;
+}
+
+/* CTA row */
+.cta-row {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ================================
+   Reviews Layout
+================================ */
+.reviews .review-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #0b1016, #05070a);
+  padding: 1.6rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 247, 255, 0.18);
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.reviews .review-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(0, 247, 255, 0.12), transparent 55%);
+  pointer-events: none;
+}
+
+.reviews .review-card img {
+  max-width: 220px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 247, 255, 0.3);
+}
+
+.reviews .review-text {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* ================================
+   Gallery Grids
+================================ */
 .gallery-grid,
 .project-gallery .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.75rem;
   margin-top: 2rem;
 }
 
 .gallery-img,
 .gallery-grid img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 247, 255, 0.25);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.9);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
 
-/* Form Elements */
-form {
+.gallery-grid img:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 0 26px rgba(0, 247, 255, 0.5);
+  border-color: rgba(0, 247, 255, 0.6);
+}
+
+/* ================================
+   Forms
+================================ */
+form,
+.contact-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-top: 2rem;
 }
 
-input,
-textarea {
-  padding: 0.75rem;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
+.contact-form {
+  max-width: 600px;
 }
 
-/* Buttons */
+label {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+input,
+textarea,
+select {
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: var(--bg-elevated-soft);
+  color: var(--text-main);
+  border: 1px solid var(--border-subtle);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: rgba(0, 247, 255, 0.7);
+  box-shadow: 0 0 12px rgba(0, 247, 255, 0.35);
+  background-color: #101826;
+}
+
+/* ================================
+   Buttons
+================================ */
 .btn,
 .cta-button,
-.submit-btn {
-  background-color: #b52020;
-  color: #d4a01f;
-  padding: 1rem 1rem;
+.submit-btn,
+.primary-btn,
+.secondary-btn {
+  background: linear-gradient(135deg, #0b8cff, #00f7ff);
+  color: #020308;
+  padding: 0.85rem 1.6rem;
   border: none;
-  border-radius: 5px;
-  font-weight: bold;
+  border-radius: 999px;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  display: inline-block;
-  transition: background-color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.btn.disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .btn:hover,
 .cta-button:hover,
-.submit-btn:hover {
-  background-color: #b52020;
+.submit-btn:hover,
+.primary-btn:hover,
+.secondary-btn:hover {
+  background: linear-gradient(135deg, #00f7ff, #ff3366);
+  color: #020308;
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px rgba(0, 247, 255, 0.7);
 }
 
-/* Divider */
+/* Secondary button tweak */
+.secondary-btn {
+  background: transparent;
+  border: 1px solid rgba(0, 247, 255, 0.65);
+  color: var(--accent-primary);
+}
+
+/* ================================
+   Divider
+================================ */
 .rgb-divider {
-  height: 4px;
-  background: linear-gradient(to right, #b52020, #d4a01f);
+  height: 3px;
+  background: linear-gradient(to right, #00f7ff, #ff3366, #f5c451);
   border: none;
   margin: 1rem 0 2rem;
-  border-radius: 2px;
+  border-radius: 999px;
+  box-shadow: 0 0 14px rgba(0, 247, 255, 0.5);
 }
 
-/* Footer */
+/* ================================
+   Footer
+================================ */
 footer {
-  background-color: #0e0e0e;
+  background-color: rgba(2, 3, 6, 0.95);
   text-align: center;
   padding: 2rem;
   font-size: 0.9rem;
-  color: #ccc;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(0, 247, 255, 0.18);
 }
 
 footer a {
-  color: #d4a01f;
+  color: var(--accent-gold);
   text-decoration: none;
 }
 
@@ -219,62 +491,62 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Responsive Layout */
+/* ================================
+   Responsive Layout
+================================ */
 @media (max-width: 768px) {
   body {
     font-size: 0.95rem;
   }
+
   header {
     padding: 1rem;
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
+
   .container {
-    padding: 1rem;
+    padding: 1.25rem;
   }
+
   section h2 {
-    font-size: 1.75rem;
+    font-size: 1.85rem;
   }
+
   .gallery-grid {
     grid-template-columns: 1fr;
   }
+
   .gallery-img {
     width: 100%;
     height: auto;
   }
+
   .site-logo {
     height: 50px;
   }
+
   .btn,
   .cta-button,
-  .submit-btn {
-    padding: 0.6rem 1.2rem;
+  .submit-btn,
+  .primary-btn,
+  .secondary-btn {
+    width: auto;
+    padding: 0.75rem 1.4rem;
   }
+
   .dropdown-toggle {
     width: 100%;
   }
+
   .dropdown-menu,
   .dropdown-menu a {
     width: 100%;
   }
-}
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.headshot {
-  height: 200px;
-}
-
-a {
-  color: #00f7f7;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #d92929;
-  text-decoration: underline;
+  .reviews .review-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
