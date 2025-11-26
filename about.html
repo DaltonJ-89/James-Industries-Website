@@ -8,12 +8,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1159473769377411" crossorigin="anonymous"></script>
 </head>
+
 <body>
   <header>
     <img src="logo.png" alt="James Industries Logo" class="site-logo" />
     <h1>About James Industries</h1>
   </header>
-<nav class="dropdown-nav">
+
+  <nav class="dropdown-nav">
     <button class="dropdown-toggle" aria-label="Open Menu">☰ Menu</button>
     <div class="dropdown-menu">
       <a href="index.html">Home</a>
@@ -27,60 +29,79 @@
       <a href="projects-gallery.html">Projects Gallery</a>
       <a href="https://JamesIndustriesStore.etsy.com" target="_blank">James Industries Store</a>
       <a href="terms.html">Terms & Policies</a>
-    </div>  
+    </div>
   </nav>
- 
+
   <main>
     <section class="about-section container">
+
       <h2>Who We Are</h2>
       <hr class="rgb-divider">
-      <p><strong>James Industries</strong> is a veteran-owned IT services company based in Indiana. We are committed to providing reliable and affordable tech support to individuals and small businesses in our community.</p>
-      <p>Our mission is simple: to deliver honest, practical, and professional solutions for every tech challenge. Whether it's a custom PC build, malware removal, network setup, or a tech consultation — we bring the knowledge and dedication to get the job done right.</p>
-      <p>We’re proud to serve with the same values we lived by in the military: integrity, attention to detail, and putting people first.</p>
+
+      <p><strong>James Industries</strong> is a veteran-owned IT services company based in Indiana, focused on providing reliable, honest, and affordable tech support to individuals, families, and small businesses.</p>
+
+      <p>Our mission is simple: deliver practical, trustworthy solutions — whether you need a custom PC build, malware removal, network setup, diagnostics, or general tech support. We approach every project with integrity, attention to detail, and genuine care for the people we serve.</p>
+
+      <p>We stand behind the same values lived in the Marine Corps: honor, commitment, discipline, and taking care of those who trust us.</p>
+
+      <h2>What We Do</h2>
+      <hr class="rgb-divider">
+
+      <ul class="services-ul">
+        <li>PC repair, cleanup, optimization, and upgrades</li>
+        <li>Virus and malware removal</li>
+        <li>Home network setup and troubleshooting</li>
+        <li>Custom gaming and workstation PC builds</li>
+        <li>Tech consultations and diagnostics</li>
+        <li>Web design and development for small businesses</li>
+      </ul>
 
       <h2>Who I Am</h2>
       <hr class="rgb-divider">
+
       <p>
         <img src="dalejames.jpg" alt="Image of Dale James" class="headshot" />
         <br>
-        <strong>Dale James (CEO, CTO, Project Manager, Technician)</strong>
+        <strong>Dale James — Founder & Lead Technician</strong>
       </p>
-      <p>Welcome, my name is Dale James and I am the founder of James Industries. I am a former Marine, follower of Jesus Christ and a lover of all things tech. I am very passionate about computers and coding and love to design websites, apps, and personal gaming PCs.</p>
-      <p>I have a wife and three boys and am currently working as a truck driver. My dream is to make James Industries my full-time career and passion. I have tried for years to get a job in tech but with a lack of success I decided to start James Industries.</p>
-      <p>I hope you'll give me the chance to earn your business!</p>
+
+      <p>My name is Dale James, and I founded James Industries out of a passion for technology and a desire to help people. I'm a former Marine, a follower of Jesus Christ, and a lifelong tech enthusiast. I love building computers, designing websites, writing code, and solving real-world tech problems.</p>
+
+      <p>I’m also a husband and father of three boys. For now, I work as a truck driver while building this business — but my dream is to make James Industries my full-time mission and career. After years of trying to break into tech through traditional paths, I chose to build something of my own instead.</p>
+
+      <p>Thank you for visiting our site. I look forward to earning your trust and your business.</p>
+
     </section>
   </main>
 
   <footer>
     <p>&copy; 2025 James Industries. All rights reserved.</p>
   </footer>
-   <script>
-  const nav = document.querySelector('.dropdown-nav');
-  const toggle = nav.querySelector('.dropdown-toggle');
-  const links = nav.querySelectorAll('.dropdown-menu a');
 
-  // Toggle menu and icon
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
-    toggle.classList.toggle('open');
-  });
+  <script>
+    const nav = document.querySelector('.dropdown-nav');
+    const toggle = nav.querySelector('.dropdown-toggle');
+    const links = nav.querySelectorAll('.dropdown-menu a');
 
-  // Auto-close on link click
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      toggle.classList.remove('open');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      toggle.classList.toggle('open');
     });
-  });
 
-  // Auto-close on outside click
-  document.addEventListener('click', (e) => {
-    if (!nav.contains(e.target)) {
-      nav.classList.remove('open');
-      toggle.classList.remove('open');
-    }
-  });
-</script>
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target)) {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+      }
+    });
+  </script>
+
 </body>
 </html>
-
