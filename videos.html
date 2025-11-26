@@ -3,83 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>James Industries Tech & Reviews | James Industries</title>
+  <title>Tech Videos & Reviews | James Industries</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1159473769377411" crossorigin="anonymous"></script>
 
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    header, nav, main, footer {
-      padding: 1rem;
-      text-align: 
-        }
-
-    .rgb-divider {
-      border: 0;
-      height: 2px;
-      background: linear-gradient(to right, #0ff, #00f, #f0f);
-      margin: 1rem 0;
-    }
-
+    /* Page-Specific Enhancements Only */
     .gallery-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1rem;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
     }
 
     .gallery-grid img {
       width: 100%;
-      max-width: 200px;
-      height: auto;
-    }
-
-    .glow {
-      box-shadow: 0 0 10px cyan;
+      max-width: 250px;
       border-radius: 8px;
-      display: block;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    @media (max-width: 600px) {
-      header h1, header h2 {
-        font-size: 1.2rem;
-      }
-
-      nav a {
-        flex: 1 0 100%;
-      }
-
-      .gallery-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .gallery-grid img {
-        max-width: 90%;
-      }
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px cyan;
     }
 
-    footer {
-      margin-top: 2rem;
-      font-size: 0.85rem;
-      color: #666;
+    .video-caption {
+      text-align: center;
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #ccc;
     }
   </style>
 </head>
+
 <body>
   <header>
     <img src="logo.png" alt="James Industries Logo" class="site-logo" />
-    <h1>James Industries Tech & Reviews</h1>
-    <h2>Videos</h2>
+    <h1>Tech Videos & Reviews</h1>
   </header>
 
- <nav class="dropdown-nav">
+  <nav class="dropdown-nav">
     <button class="dropdown-toggle" aria-label="Open Menu">☰ Menu</button>
     <div class="dropdown-menu">
       <a href="index.html">Home</a>
@@ -93,31 +59,32 @@
       <a href="projects-gallery.html">Projects Gallery</a>
       <a href="https://JamesIndustriesStore.etsy.com" target="_blank">James Industries Store</a>
       <a href="terms.html">Terms & Policies</a>
-    </div>  
+    </div>
   </nav>
-  
+
   <main>
     <section class="project-gallery container">
-      <h2>James Industries Tech & Reviews</h2>
+      <h2>Latest Tech Videos</h2>
       <hr class="rgb-divider">
-      <div class="gallery-grid">
-        <a href="https://youtu.be/OyT4CQIXLos?si=T3Fi6K4-zFbob6NM" target="_blank">
-          <img
-            src="IMG_0030.png"
-            alt="Thumbnail for tech review video"
-            loading="lazy"
-            class="glow"
-          />
-        </a>
 
-        <a href="https://youtu.be/issNZYZ54rA?si=Kt5onDlrflbA6als" target="_blank">
-          <img
-            src="20250601_224822.jpg"
-            alt="Thumbnail for PC build video"
-            loading="lazy"
-            class="glow"
-          />
-        </a>
+      <div class="gallery-grid">
+
+        <!-- Video 1 -->
+        <div class="video-block">
+          <a href="https://youtu.be/OyT4CQIXLos?si=T3Fi6K4-zFbob6NM" target="_blank">
+            <img src="IMG_0030.png" alt="Thumbnail: Tech review breakdown video" loading="lazy" />
+          </a>
+          <p class="video-caption">Full breakdown: Tech Review & Real-World Testing</p>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-block">
+          <a href="https://youtu.be/issNZYZ54rA?si=Kt5onDlrflbA6als" target="_blank">
+            <img src="20250601_224822.jpg" alt="Thumbnail: Custom PC build showcase video" loading="lazy" />
+          </a>
+          <p class="video-caption">Custom PC Build Showcase — Performance & Behind the Build</p>
+        </div>
+
       </div>
     </section>
   </main>
@@ -125,33 +92,31 @@
   <footer>
     <p>&copy; 2025 James Industries. All rights reserved.</p>
   </footer>
-   <script>
-  const nav = document.querySelector('.dropdown-nav');
-  const toggle = nav.querySelector('.dropdown-toggle');
-  const links = nav.querySelectorAll('.dropdown-menu a');
 
-  // Toggle menu and icon
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
-    toggle.classList.toggle('open');
-  });
+  <script>
+    const nav = document.querySelector('.dropdown-nav');
+    const toggle = nav.querySelector('.dropdown-toggle');
+    const links = nav.querySelectorAll('.dropdown-menu a');
 
-  // Auto-close on link click
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      toggle.classList.remove('open');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      toggle.classList.toggle('open');
     });
-  });
 
-  // Auto-close on outside click
-  document.addEventListener('click', (e) => {
-    if (!nav.contains(e.target)) {
-      nav.classList.remove('open');
-      toggle.classList.remove('open');
-    }
-  });
-</script>
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target)) {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+      }
+    });
+  </script>
 
 </body>
 </html>
