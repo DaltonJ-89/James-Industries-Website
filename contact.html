@@ -8,13 +8,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1159473769377411" crossorigin="anonymous"></script>
 </head>
+
 <body>
   <header>
     <img src="logo.png" alt="James Industries Logo" class="site-logo" />
     <h1>Contact Us</h1>
   </header>
 
-   <nav class="dropdown-nav">
+  <nav class="dropdown-nav">
     <button class="dropdown-toggle" aria-label="Open Menu">☰ Menu</button>
     <div class="dropdown-menu">
       <a href="index.html">Home</a>
@@ -35,47 +36,86 @@
     <section class="contact-section container">
       <h2>Get in Touch</h2>
       <hr class="rgb-divider">
-      <p>Call or email us today for a free estimate or more information about our services.</p>
+      <p>If you’d like a free estimate or have questions about any service, reach out anytime using the contact information below or by sending a message through our request form.</p>
+
       <div class="contact-info">
         <p><strong>Contact Email:</strong> <a href="mailto:contact@james-industries-llc.com">contact@james-industries-llc.com</a></p>
         <p><strong>Support Email:</strong> <a href="mailto:support@james-industries-llc.com">support@james-industries-llc.com</a></p>
         <p><strong>Sales Email:</strong> <a href="mailto:sales@james-industries-llc.com">sales@james-industries-llc.com</a></p>
         <p><strong>Call or Text:</strong> <a href="tel:+17654143506">(765) 414-3506</a></p>
       </div>
+
+      <h2>Send a Message</h2>
+      <hr class="rgb-divider">
+
+      <!-- Contact Form -->
+      <form action="https://formspree.io/f/your-endpoint-here" method="POST" class="contact-form">
+        <label>
+          Your Name:
+          <input type="text" name="name" required>
+        </label>
+
+        <label>
+          Your Email:
+          <input type="email" name="email" required>
+        </label>
+
+        <label>
+          Phone Number (optional):
+          <input type="text" name="phone">
+        </label>
+
+        <label>
+          What service do you need?
+          <select name="service">
+            <option value="PC Repair">PC Repair / Optimization</option>
+            <option value="Malware Removal">Virus / Malware Removal</option>
+            <option value="Network Setup">Home Network Setup</option>
+            <option value="Custom PC Build">Custom PC Build</option>
+            <option value="Consultation">Tech Consultation</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+
+        <label>
+          Message:
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+
+        <button type="submit" class="btn primary-btn">Submit Request</button>
+      </form>
+
     </section>
   </main>
 
   <footer>
     <p>&copy; 2025 James Industries. All rights reserved.</p>
   </footer>
-   <script>
-  const nav = document.querySelector('.dropdown-nav');
-  const toggle = nav.querySelector('.dropdown-toggle');
-  const links = nav.querySelectorAll('.dropdown-menu a');
 
-  // Toggle menu and icon
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
-    toggle.classList.toggle('open');
-  });
+  <script>
+    const nav = document.querySelector('.dropdown-nav');
+    const toggle = nav.querySelector('.dropdown-toggle');
+    const links = nav.querySelectorAll('.dropdown-menu a');
 
-  // Auto-close on link click
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      toggle.classList.remove('open');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      toggle.classList.toggle('open');
     });
-  });
 
-  // Auto-close on outside click
-  document.addEventListener('click', (e) => {
-    if (!nav.contains(e.target)) {
-      nav.classList.remove('open');
-      toggle.classList.remove('open');
-    }
-  });
-</script>
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target)) {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+      }
+    });
+  </script>
 </body>
 </html>
-
-
