@@ -550,3 +550,11 @@ footer a:hover {
     align-items: flex-start;
   }
 }
+/* Dropdown nav behavior */
+.dropdown-menu {
+  display: none;
+}
+
+.dropdown-nav.open .dropdown-menu {
+  display: block;
+}
