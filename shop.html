@@ -16,20 +16,9 @@
   <style>
     /* Store page-only styles (kept minimal to avoid conflicting with your style.css) */
 
-    .store-hero {
-      padding: 2rem 0;
-    }
-
-    .store-hero h2 {
-      font-size: 1.6rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .store-hero p {
-      line-height: 1.6;
-      margin: 0.5rem 0 1.25rem 0;
-      opacity: 0.95;
-    }
+    .store-hero { padding: 2rem 0; }
+    .store-hero h2 { font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .store-hero p { line-height: 1.6; margin: 0.5rem 0 1.25rem 0; opacity: 0.95; }
 
     .store-toolbar {
       display: flex;
@@ -70,10 +59,7 @@
       background: rgba(0,0,0,0.35);
     }
 
-    .store-note {
-      font-size: 0.95rem;
-      opacity: 0.9;
-    }
+    .store-note { font-size: 0.95rem; opacity: 0.9; }
 
     .product-grid {
       display: grid;
@@ -82,17 +68,9 @@
       grid-template-columns: repeat(1, 1fr);
     }
 
-    @media (min-width: 600px) {
-      .product-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (min-width: 900px) {
-      .product-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    @media (min-width: 1200px) {
-      .product-grid { grid-template-columns: repeat(5, 1fr); }
-    }
+    @media (min-width: 600px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 900px) { .product-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1200px) { .product-grid { grid-template-columns: repeat(5, 1fr); } }
 
     .product-card {
       border: 1px solid rgba(255,255,255,0.15);
@@ -156,10 +134,7 @@
       margin-top: 0.25rem;
     }
 
-    .price {
-      font-weight: 600;
-      font-size: 1.05rem;
-    }
+    .price { font-weight: 600; font-size: 1.05rem; }
 
     .tag {
       font-size: 0.82rem;
@@ -213,9 +188,7 @@
       border-color: rgba(255,255,255,0.3);
     }
 
-    .hidden {
-      display: none !important;
-    }
+    .hidden { display: none !important; }
   </style>
 </head>
 
@@ -238,23 +211,24 @@
       typeWriter();
     </script>
   </header>
-    <nav class="dropdown-nav">
-      <button class="dropdown-toggle" aria-label="Open Menu">☰ Menu</button>
-      <div class="dropdown-menu">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="pc-builder.html">PC Builder</a>
-        <a href="about.html">About</a>
-        <a href="guarantee.html">Guarantee</a>
-        <a href="shop.html" class="active">Shop</a>
-        <a href="contact.html">Contact</a>
-        <a href="videos.html">Videos</a>
-        <a href="reviews.html">Reviews</a>
-        <a href="projects-gallery.html">Projects Gallery</a>
-        <a href="https://JamesIndustriesStore.etsy.com" target="_blank">James Industries Store</a>
-        <a href="terms.html">Terms & Policies</a>
-      </div>  
-    </nav>
+
+  <nav class="dropdown-nav">
+    <button class="dropdown-toggle" aria-label="Open Menu">☰ Menu</button>
+    <div class="dropdown-menu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pc-builder.html">PC Builder</a>
+      <a href="about.html">About</a>
+      <a href="guarantee.html">Guarantee</a>
+      <a href="shop.html" class="active">Shop</a>
+      <a href="contact.html">Contact</a>
+      <a href="videos.html">Videos</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="projects-gallery.html">Projects Gallery</a>
+      <a href="https://JamesIndustriesStore.etsy.com" target="_blank" rel="noopener">James Industries Store</a>
+      <a href="terms.html">Terms & Policies</a>
+    </div>
+  </nav>
 
   <main>
     <section class="announcement store-hero">
@@ -274,9 +248,7 @@
             <button class="filter-btn" data-filter="accessories" type="button">Accessories</button>
           </div>
 
-          <div class="store-note">
-           #
-          </div>
+          <div class="store-note" id="storeNote">Showing all products</div>
         </div>
       </div>
     </section>
@@ -288,7 +260,7 @@
           <!-- SLOT 1 -->
           <article class="product-card" data-category="apparel">
             <div class="product-media">
-              <img src="store/product-01.jpg" alt="Product 1" />
+              <img src="store/product-01.jpg" alt="James Industries Tee" />
             </div>
             <div class="product-body">
               <h3 class="product-title">James Industries Tee</h3>
@@ -299,7 +271,7 @@
               </div>
               <div class="product-actions">
                 <a class="buy-btn" href="#" target="_blank" rel="noopener">Buy</a>
-                <a class="details-btn" href="#" >Details</a>
+                <a class="details-btn" href="#">Details</a>
               </div>
             </div>
           </article>
@@ -307,7 +279,7 @@
           <!-- SLOT 2 -->
           <article class="product-card" data-category="apparel">
             <div class="product-media">
-              <img src="store/product-02.jpg" alt="Product 2" />
+              <img src="store/product-02.jpg" alt="Integrity Hoodie" />
             </div>
             <div class="product-body">
               <h3 class="product-title">Integrity Hoodie</h3>
@@ -323,22 +295,29 @@
             </div>
           </article>
 
-          <!-- SLOT 3 -->
+          <!-- SLOT 3 (FIXED) -->
           <article class="product-card" data-category="headwear">
             <div class="product-media">
-              <img src="store/product-03.jpg" alt="Product 3" />
+              <img src="store/product-03.jpg" alt="Operator Cap" />
             </div>
             <div class="product-body">
               <h3 class="product-title">Operator Cap</h3>
               <p class="product-desc">Structured hat. Clean logo. Daily driver.</p>
               <div class="product-meta">
                 <span class="price">$27.99</span>
-                <span class="tag">Headwear</span
+                <span class="tag">Headwear</span>
+              </div>
+              <div class="product-actions">
+                <a class="buy-btn" href="#" target="_blank" rel="noopener">Buy</a>
+                <a class="details-btn" href="#">Details</a>
+              </div>
+            </div>
+          </article>
 
           <!-- SLOT 4 -->
           <article class="product-card" data-category="apparel">
             <div class="product-media">
-              <img src="store/product-01.jpg" alt="Product 1" />
+              <img src="store/product-01.jpg" alt="James Industries Tee" />
             </div>
             <div class="product-body">
               <h3 class="product-title">James Industries Tee</h3>
@@ -349,7 +328,7 @@
               </div>
               <div class="product-actions">
                 <a class="buy-btn" href="#" target="_blank" rel="noopener">Buy</a>
-                <a class="details-btn" href="#" >Details</a>
+                <a class="details-btn" href="#">Details</a>
               </div>
             </div>
           </article>
@@ -357,7 +336,7 @@
           <!-- SLOT 5 -->
           <article class="product-card" data-category="apparel">
             <div class="product-media">
-              <img src="store/product-01.jpg" alt="Product 1" />
+              <img src="store/product-01.jpg" alt="James Industries Tee" />
             </div>
             <div class="product-body">
               <h3 class="product-title">James Industries Tee</h3>
@@ -368,7 +347,7 @@
               </div>
               <div class="product-actions">
                 <a class="buy-btn" href="#" target="_blank" rel="noopener">Buy</a>
-                <a class="details-btn" href="#" >Details</a>
+                <a class="details-btn" href="#">Details</a>
               </div>
             </div>
           </article>
@@ -376,7 +355,7 @@
           <!-- SLOT 6 -->
           <article class="product-card" data-category="apparel">
             <div class="product-media">
-              <img src="store/product-01.jpg" alt="Product 1" />
+              <img src="store/product-01.jpg" alt="James Industries Tee" />
             </div>
             <div class="product-body">
               <h3 class="product-title">James Industries Tee</h3>
@@ -387,15 +366,15 @@
               </div>
               <div class="product-actions">
                 <a class="buy-btn" href="#" target="_blank" rel="noopener">Buy</a>
-                <a class="details-btn" href="#" >Details</a>
+                <a class="details-btn" href="#">Details</a>
               </div>
             </div>
-          </article>                
+          </article>
 
           <!-- SLOT 7 -->
           <article class="product-card" data-category="apparel">
             <div class="product-media">
-              <img src="store/product-01.jpg" alt="Product 1" />
+              <img src="store/product-01.jpg" alt="James Industries Tee" />
             </div>
             <div class="product-body">
               <h3 class="product-title">James Industries Tee</h3>
@@ -406,15 +385,15 @@
               </div>
               <div class="product-actions">
                 <a class="buy-btn" href="#" target="_blank" rel="noopener">Buy</a>
-                <a class="details-btn" href="#" >Details</a>
+                <a class="details-btn" href="#">Details</a>
               </div>
             </div>
-          </article>               
+          </article>
 
           <!-- SLOT 8 -->
           <article class="product-card" data-category="apparel">
             <div class="product-media">
-              <img src="store/product-01.jpg" alt="Product 1" />
+              <img src="store/product-01.jpg" alt="James Industries Tee" />
             </div>
             <div class="product-body">
               <h3 class="product-title">James Industries Tee</h3>
@@ -425,15 +404,15 @@
               </div>
               <div class="product-actions">
                 <a class="buy-btn" href="#" target="_blank" rel="noopener">Buy</a>
-                <a class="details-btn" href="#" >Details</a>
+                <a class="details-btn" href="#">Details</a>
               </div>
             </div>
-          </article>                
+          </article>
 
           <!-- SLOT 9 -->
           <article class="product-card" data-category="apparel">
             <div class="product-media">
-              <img src="store/product-01.jpg" alt="Product 1" />
+              <img src="store/product-01.jpg" alt="James Industries Tee" />
             </div>
             <div class="product-body">
               <h3 class="product-title">James Industries Tee</h3>
@@ -444,7 +423,7 @@
               </div>
               <div class="product-actions">
                 <a class="buy-btn" href="#" target="_blank" rel="noopener">Buy</a>
-                <a class="details-btn" href="#" >Details</a>
+                <a class="details-btn" href="#">Details</a>
               </div>
             </div>
           </article>
@@ -452,7 +431,7 @@
           <!-- SLOT 10 -->
           <article class="product-card" data-category="apparel">
             <div class="product-media">
-              <img src="store/product-01.jpg" alt="Product 1" />
+              <img src="store/product-01.jpg" alt="James Industries Tee" />
             </div>
             <div class="product-body">
               <h3 class="product-title">James Industries Tee</h3>
@@ -463,7 +442,47 @@
               </div>
               <div class="product-actions">
                 <a class="buy-btn" href="#" target="_blank" rel="noopener">Buy</a>
-                <a class="details-btn" href="#" >Details</a>
+                <a class="details-btn" href="#">Details</a>
               </div>
             </div>
-          </article>                
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Category filters + count
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll(".product-card");
+    const note = document.getElementById("storeNote");
+
+    function updateNote(filter) {
+      const visibleCount = [...cards].filter(c => !c.classList.contains("hidden")).length;
+      const label = filter === "all" ? "all products" : filter;
+      note.textContent = `Showing ${visibleCount} ${label}`;
+    }
+
+    function applyFilter(filter) {
+      cards.forEach(card => {
+        const cat = card.getAttribute("data-category");
+        const show = (filter === "all" || cat === filter);
+        card.classList.toggle("hidden", !show);
+      });
+      updateNote(filter);
+    }
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        applyFilter(btn.dataset.filter);
+      });
+    });
+
+    // Init
+    applyFilter("all");
+  </script>
+</body>
+</html>
