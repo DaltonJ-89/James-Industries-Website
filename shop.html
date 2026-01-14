@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="James Industries Store | Official merch and gear. Veteran-owned. Built with integrity." />
+  <meta property="og:title" content="James Industries | Store" />
+  <meta property="og:description" content="Official James Industries merch. Apparel, hats, accessories, and more." />
+  <meta property="og:image" content="logo.png" />
+  <meta property="og:type" content="website" />
+  <title>James Industries | Store</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Store page-only styles (kept minimal to avoid conflicting with your style.css) */
+
+    .store-hero {
+      padding: 2rem 0;
+    }
+
+    .store-hero h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .store-hero p {
+      line-height: 1.6;
+      margin: 0.5rem 0 1.25rem 0;
+      opacity: 0.95;
+    }
+
+    .store-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1rem;
+    }
+
+    .store-filters {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(0,0,0,0.2);
+      color: inherit;
+      padding: 0.55rem 0.9rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.08s ease, background 0.2s ease, border 0.2s ease;
+    }
+
+    .filter-btn:hover {
+      transform: translateY(-1px);
+      background: rgba(0,0,0,0.28);
+      border-color: rgba(255,255,255,0.35);
+    }
+
+    .filter-btn.active {
+      border-color: rgba(255,255,255,0.55);
+      background: rgba(0,0,0,0.35);
+    }
+
+    .store-note {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .product-grid {
+      display: grid;
+      gap: 1rem;
+      margin: 1.5rem 0 2rem 0;
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @media (min-width: 600px) {
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 900px) {
+      .product-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (min-width: 1200px) {
+      .product-grid { grid-template-columns: repeat(5, 1fr); }
+    }
+
+    .product-card {
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(0,0,0,0.18);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      transition: transform 0.08s ease, border 0.2s ease, background 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,0.25);
+      background: rgba(0,0,0,0.22);
+    }
+
+    .product-media {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: rgba(255,255,255,0.06);
+      display: grid;
+      place-items: center;
+    }
+
+    .product-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-body {
+      padding: 0.9rem 0.9rem 1rem 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      flex: 1;
+    }
+
+    .product-title {
+      font-weight: 600;
+      font-size: 1.02rem;
+      margin: 0;
+    }
+
+    .product-desc {
+      margin: 0;
+      line-height: 1.45;
+      font-size: 0.95rem;
+      opacity: 0.92;
+      min-height: 2.6em;
+    }
+
+    .product-meta {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-top: 0.25rem;
+    }
+
+    .price {
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .tag {
+      font-size: 0.82rem;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      padding: 0.15rem 0.55rem;
+      opacity: 0.9;
+      white-space: nowrap;
+    }
+
+    .product-actions {
+      margin-top: auto;
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .buy-btn {
+      text-decoration: none;
+      display: inline-block;
+      padding: 0.6rem 0.85rem;
+      border-radius: 10px;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(0,0,0,0.25);
+      color: inherit;
+      transition: transform 0.08s ease, background 0.2s ease, border 0.2s ease;
+    }
+
+    .buy-btn:hover {
+      transform: translateY(-1px);
+      background: rgba(0,0,0,0.32);
+      border-color: rgba(255,255,255,0.35);
+    }
+
+    .details-btn {
+      text-decoration: none;
+      display: inline-block;
+      padding: 0.6rem 0.85rem;
+      border-radius: 10px;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: transparent;
+      color: inherit;
+      opacity: 0.95;
+      transition: transform 0.08s ease, border 0.2s ease;
+    }
+
+    .details-btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="logo.png" alt="James Industries Logo" class="site-logo" />
+    <h1 id="intro-text"></h1>
+
+    <script>
+      const text = "James Industries Store";
+      let i = 0;
+      const speed = 70;
+      function typeWriter() {
+        if (i < text.length) {
+          document.getElementById("intro-text").innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      }
+      typeWriter();
+    </script>
+  </header>
+
+  <nav class="dropdown-nav">
+    <button class="dropdown-toggle" aria-label="Open Menu">☰ Menu</button>
+    <div class="dropdown-menu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pc-builder.html">PC Builder</a>
+      <a href="about.html">About</a>
+      <a href="guarantee.html">Guarantee</a>
+      <a href="contact.html">Contact</a>
+      <a href="videos.html">Videos</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="projects-gallery.html">Projects Gallery</a>
+
+      <!-- New Store page -->
+      <a href="store.html" class="active">Store</a>
+
+      <!-- Keep Etsy link if you still want it -->
+      <a href="https://JamesIndustriesStore.etsy.com" target="_blank" rel="noopener">Etsy Store</a>
+
+      <a href="terms.html">Terms & Policies</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="announcement store-hero">
+      <div class="container">
+        <h2>Official Merch</h2>
+        <hr class="rgb-divider">
+        <p>
+          Veteran-owned. Clean designs. Quality gear.
+          Click <strong>Buy</strong> to purchase (Printful / PayPal ready). Use the filters to view categories.
+        </p>
+
+        <div class="store-toolbar">
+          <div class="store-filters" role="tablist" aria-label="Product categories">
+            <button class="filter-btn active" data-filter="all" type="button">All</button>
+            <button class="filter-btn" data-filter="apparel" type="button">Apparel</button>
+            <button class="filter-btn" data-filter="headwear" type="button">Headwear</button>
+            <button class="filter-btn" data-filter="accessories" type="button">Accessories</button>
+          </div>
+
+          <div class="store-note">
+            10 item slots (launch roster). More drops soon.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="image-block">
+      <div class="container">
+        <div class="product-grid" id="productGrid">
+
+          <!-- SLOT 1 -->
+          <article class="product-card" data-category="apparel">
+            <div class="product-media">
+              <img src="store/product-01.jpg" alt="Product 1" />
+            </div>
+            <div class="product-body">
+              <h3 class="product-title">James Industries Tee</h3>
+              <p class="product-desc">Soft, durable, clean branding. Everyday wear.</p>
+              <div class="product-meta">
+                <span class="price">$24.99</span>
+                <span class="tag">Apparel</span>
+              </div>
+              <div class="product-actions">
+                <a class="buy-btn" href="#" target="_blank" rel="noopener">Buy</a>
+                <a class="details-btn" href="#" >Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SLOT 2 -->
+          <article class="product-card" data-category="apparel">
+            <div class="product-media">
+              <img src="store/product-02.jpg" alt="Product 2" />
+            </div>
+            <div class="product-body">
+              <h3 class="product-title">Integrity Hoodie</h3>
+              <p class="product-desc">Warm, clean look. Built for cold Indiana days.</p>
+              <div class="product-meta">
+                <span class="price">$44.99</span>
+                <span class="tag">Apparel</span>
+              </div>
+              <div class="product-actions">
+                <a class="buy-btn" href="#" target="_blank" rel="noopener">Buy</a>
+                <a class="details-btn" href="#">Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SLOT 3 -->
+          <article class="product-card" data-category="headwear">
+            <div class="product-media">
+              <img src="store/product-03.jpg" alt="Product 3" />
+            </div>
+            <div class="product-body">
+              <h3 class="product-title">Operator Cap</h3>
+              <p class="product-desc">Structured hat. Clean logo. Daily driver.</p>
+              <div class="product-meta">
+                <span class="price">$27.99</span>
+                <span class="tag">Headwear</span
